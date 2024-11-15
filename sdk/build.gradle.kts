@@ -14,6 +14,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id("java-library")
     alias(libs.plugins.kotlin.jvm)
@@ -22,8 +24,14 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+    }
 }
 
 protobuf {

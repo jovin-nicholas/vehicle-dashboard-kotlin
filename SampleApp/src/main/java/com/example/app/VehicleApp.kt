@@ -14,27 +14,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-pluginManagement {
-    repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+package com.example.app
 
-rootProject.name = "vehicle-app-kotlin-template"
-include(":sdk")
-include(":SampleApp")
+import com.example.logger.LogcatLoggingStrategy
+import org.eclipse.velocitas.sdk.VehicleApplication
+import org.eclipse.velocitas.sdk.logging.Logger
+
+class VehicleApp : VehicleApplication() {
+    init {
+        Logger.loggingStrategy = LogcatLoggingStrategy
+    }
+
+    override fun onStart() {
+        // unused
+    }
+
+    override fun onStop() {
+        // unused
+    }
+}

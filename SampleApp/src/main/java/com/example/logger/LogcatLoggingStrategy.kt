@@ -14,23 +14,32 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package com.example.app
+package com.example.logger
 
-import androidx.car.app.CarAppService
-import androidx.car.app.Session
-import androidx.car.app.validation.HostValidator
+import android.util.Log
+import org.eclipse.velocitas.sdk.logging.LoggingStrategy
 
 /**
- * The base class for implementing a car app that runs in the car
- *
- * @see CarAppService
+ * LoggingStrategy to output all logs using Android Logcat.
  */
-class VehicleAppService : CarAppService() {
-    override fun createHostValidator(): HostValidator {
-        return HostValidator.ALLOW_ALL_HOSTS_VALIDATOR
+object LogcatLoggingStrategy : LoggingStrategy {
+    override fun info(tag: String, message: String) {
+        Log.i(tag, message)
     }
 
-    override fun onCreateSession(): Session {
-        return VehicleAppSession()
+    override fun warn(tag: String, message: String) {
+        Log.w(tag, message)
+    }
+
+    override fun error(tag: String, message: String) {
+        Log.e(tag, message)
+    }
+
+    override fun debug(tag: String, message: String) {
+        Log.d(tag, message)
+    }
+
+    override fun verbose(tag: String, message: String) {
+        Log.v(tag, message)
     }
 }
