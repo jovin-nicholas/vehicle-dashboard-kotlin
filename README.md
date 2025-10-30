@@ -18,3 +18,6 @@ The Android Auto Desktop Head Unit Emulator is required for testing. The minimum
 3) Create a new Android Automotive Virtual Device with the above installed system image
 4) Deploy the app to the emulator
 
+## Features
+
+Implements a simulated vehicle telemetry dashboard displaying live speed, battery, and temperature using Kotlin, coroutines, and Jetpack Compose for Android Automotive OS.
