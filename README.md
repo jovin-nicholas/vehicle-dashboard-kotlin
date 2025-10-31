@@ -160,10 +160,6 @@ This project demonstrates:
 - [ ] Implement unit tests for ViewModel
 - [ ] Add UI tests with Compose Testing
 
-## License
-
-MIT License
-
 ## Contact
 
 Jovin Nicholas  
